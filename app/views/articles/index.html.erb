@@ -1,0 +1,18 @@
+<h1>Articles Information</h1>
+
+<table border = '1'>
+    <thead>
+        <th><b>Title</b></th>
+        <th><b>Description</b></th>
+        <th><b>Actions</b></th>
+    </thead>
+    <tbody>
+        <%@articles.each do |article|%>
+            <tr>
+                <td><%=article.title%></td>
+                <td><%=article.description%></td>
+                <td><%=link_to 'Delete', article_path(article.id), data: {turbo_method: :delete}%></td>
+            </tr>
+        <%end%>
+    </tbody>
+</table>
